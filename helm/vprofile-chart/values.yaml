@@ -1,0 +1,65 @@
+app:
+  name: vproapp
+  image: vprocontainers/vprofileapp
+  tag: latest
+  replicas: 1
+  port: 8080
+  serviceName: vproapp-service
+
+db:
+  name: vprodb
+  image: vprocontainers/vprofiledb
+  tag: latest
+  replicas: 1
+  port: 3306
+  serviceName: vprodb
+  pvcName: db-pv-claim
+  storageSize: 3Gi
+  storageClass: default
+
+memcached:
+  name: vpromc
+  image: memcached
+  tag: latest
+  replicas: 1
+  port: 11211
+  serviceName: vprocache01
+
+rabbitmq:
+  name: vpromq01
+  image: rabbitmq
+  tag: latest
+  replicas: 1
+  port: 5672
+  serviceName: vpromq01
+  defaultUser: guest
+
+initcontainers:
+  dbWaitImage: busybox
+  dbWaitTag: latest
+  mcWaitImage: busybox
+  mcWaitTag: latest
+  dbCleanImage: busybox
+  dbCleanTag: latest
+
+ingress:
+  enabled: true
+  name: vpro-ingress
+  className: nginx
+  host: vprofile.hkhinfoteck.xyz
+  path: /
+  pathType: Prefix
+  servicePort: 8080
+
+secrets:
+  name: app-secret
+  dbPass: dnByb2RicGFzcw==
+  rmqPass: Z3Vlc3Q=
+
+dockerregistry:
+  enabled: false
+  name: regcred
+  server: https://index.docker.io/v1/
+  username: ""
+  password: ""
+  email: ""
