@@ -1,7 +1,7 @@
 app:
   name: vproapp
   image: vprocontainers/vprofileapp
-  tag: latest
+  tag: 
   replicas: 1
   port: 8080
   serviceName: vproapp-service
@@ -9,7 +9,7 @@ app:
 db:
   name: vprodb
   image: vprocontainers/vprofiledb
-  tag: latest
+  tag: 
   replicas: 1
   port: 3306
   serviceName: vprodb
@@ -20,7 +20,7 @@ db:
 memcached:
   name: vpromc
   image: memcached
-  tag: latest
+  tag: 
   replicas: 1
   port: 11211
   serviceName: vprocache01
@@ -28,7 +28,7 @@ memcached:
 rabbitmq:
   name: vpromq01
   image: rabbitmq
-  tag: latest
+  tag: 
   replicas: 1
   port: 5672
   serviceName: vpromq01
