@@ -1,6 +1,6 @@
 app:
   name: vproapp
-  image: vprocontainers/vprofileapp
+  image: /vproappimg
   tag: 
   replicas: 1
   port: 8080
