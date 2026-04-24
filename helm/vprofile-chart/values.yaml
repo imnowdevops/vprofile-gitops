@@ -1,7 +1,7 @@
 app:
   name: vproapp
-  image: /vproappimg
-  tag: 
+  image: 980088651931.dkr.ecr.us-east-1.amazonaws.com/vproappimg
+  tag: 5eca5dd5aca4d49a08115b41d458e55e189bb4cb
   replicas: 1
   port: 8080
   serviceName: vproapp-service
