@@ -9,7 +9,7 @@ app:
 db:
   name: vprodb
   image: vprocontainers/vprofiledb
-  tag: 
+  tag: latest
   replicas: 1
   port: 3306
   serviceName: vprodb
@@ -20,7 +20,7 @@ db:
 memcached:
   name: vpromc
   image: memcached
-  tag: 
+  tag: latest
   replicas: 1
   port: 11211
   serviceName: vprocache01
@@ -28,7 +28,7 @@ memcached:
 rabbitmq:
   name: vpromq01
   image: rabbitmq
-  tag: 
+  tag: latest
   replicas: 1
   port: 5672
   serviceName: vpromq01
@@ -46,7 +46,7 @@ ingress:
   enabled: true
   name: vpro-ingress
   className: nginx
-  host: vprofile.hkhinfoteck.xyz
+  host: vprofile.hkhinfotek.xyz
   path: /
   pathType: Prefix
   servicePort: 8080
