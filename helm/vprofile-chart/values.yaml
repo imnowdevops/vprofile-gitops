@@ -15,7 +15,7 @@ db:
   serviceName: vprodb
   pvcName: db-pv-claim
   storageSize: 3Gi
-  storageClass: default
+  storageClass: gp2
 
 memcached:
   name: vpromc
