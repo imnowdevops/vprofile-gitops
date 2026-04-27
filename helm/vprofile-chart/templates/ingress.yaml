@@ -4,7 +4,9 @@ kind: Ingress
 metadata:
   name: {{ .Values.ingress.name }}
   annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:

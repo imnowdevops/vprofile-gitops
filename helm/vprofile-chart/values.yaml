@@ -45,7 +45,7 @@ initcontainers:
 ingress:
   enabled: true
   name: vpro-ingress
-  className: nginx
+  className: alb
   host: vprofile.hkhinfotek.xyz
   path: /
   pathType: Prefix
