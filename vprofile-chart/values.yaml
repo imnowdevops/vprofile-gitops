@@ -1,0 +1,48 @@
+app:
+  image: vprocontainers/vprofileapp
+  tag: latest
+  replicas: 1
+  containerPort: 8080
+  servicePort: 8080
+
+db:
+  image: vprocontainers/vprofiledb
+  tag: latest
+  replicas: 1
+  containerPort: 3306
+  storageClass: gp2
+  storageSize: 3Gi
+
+memcached:
+  image: memcached
+  tag: latest
+  replicas: 1
+  containerPort: 11211
+  servicePort: 11211
+
+rabbitmq:
+  image: rabbitmq
+  tag: latest
+  replicas: 1
+  containerPort: 5672
+  defaultUser: guest
+
+initcontainers:
+  image: busybox
+  tag: latest
+
+ingress:
+  enabled: true
+  host: vprofile.hkhinfoteck.xyz
+  servicePort: 8080
+
+secrets:
+  dbPass: dnByb2RicGFzcw==
+  rmqPass: Z3Vlc3Q=
+
+dockerregistry:
+  enabled: false
+  server: https://index.docker.io/v1/
+  username: ""
+  password: ""
+  email: ""
